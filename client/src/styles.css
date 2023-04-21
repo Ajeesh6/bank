@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("https://i.postimg.cc/pL7qKp83/pexels-nataliya-vaitkevich-6120251.jpg");
+    background-size: cover;
+}
+.style{
+    opacity: 0;
+}

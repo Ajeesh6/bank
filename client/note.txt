@@ -1,0 +1,158 @@
+Angular
+
+npm 
+
+create project
+        -ng new projectName
+-ng new projectName --routing
+
+clear errors/warnings 
+        -npm i --force
+
+project running 
+        -ng serve --open
+
+
+life cycle of angular component
+--------------------------------
+
+constructor  --> ngOnInit --> other methods
+
+Data Binding Techniques in Angular (data sharing in component)
+-----------------------------------
+
+html - view
+ts   - component
+
+
+
+
+
+1.one way binding
+----------------------
+1.1 -component to view data sharing
+
+   1.1.1   string interpollation   {{}}
+   1.1.2   property binding        [property]=""
+   
+
+1.2 - view to component data sharing
+   
+   1.2.1   event binding         (event)="method()"
+   1.2.2   event binding using $event         (event)=method($event)
+   1.2.3   event binding with template rendering variable
+
+2.Two way binding
+---------------------
+2.1 ngModel [(ngModel)]="property"  --FormsModule
+  
+
+Redirection in Angular
+---------------------
+
+Module - AppRoutingModule
+Router - a class to redirect 
+methods - navigateByUrl
+
+
+Dependency Injection
+---------------------
+
+to share data from one class to another
+  
+ inside constructor 
+
+ access_specifier           referance:className
+ private/public               
+
+ reference.method()
+
+Angular Services
+----------------
+
+to store redentent datas and methods
+-all the components can access datas and methods defined in service file easily
+
+-ng g s service_name
+
+
+Angular Directives - to manipulate DashboardComponent
+------------------------------
+
+ 1.component Directives
+ 2.structural Directives  *ngFor
+ 3.attribute directives  [ngclass]
+
+ 
+validation in angular
+---------------------
+form creation in angular
+
+1.template driven form
+2.model driven form   
+      
+2.1-reactive form - to create model of form
+reactive form contain group,array,control
+-ReactiveFormsModule          -module
+-FormBuilder                  -class used to create model form
+-group                        -method to create model
+       
+       
+localstrorage in angular
+-----------------------
+localstrorage.getItem()
+localstrorage.setItem()
+localstrorage.removeItem()
+
+json-    stringify       parse
+
+
+parent child components communication
+------------------------------
+
+@input() - parent to child data sharing 
+@output() - child to parent data sharing
+
+
+Event creation in angular
+--------------------------
+we can create our own events in angular projects
+
+EventEmitter - class used to create userdefined events
+                    
+              eventname=new EventEmitter()
+              emit() - to define the working time / to start the event      
+ 
+Date and time in angular
+-----------------------
+class - Date
+
+Angular pipes
+---------------
+to convert data into another format
+
+
+API creation in Angular
+-----------------------
+HttpClientModule - module to create web api calls
+
+HttpClient       - class inside the HttpClientModule
+
+
+folder     file      class   methods
+package   modules    class   methods
+
+
+Asynchronous Code handling in ts
+--------------------------------
+
+js - promise - resove    then()
+             - reject    catch()
+
+ts - observable - resolve   subscribe()
+                - reject    catch()
+
+
+http server for hosting
+-----------------------
+npm i -g http-server

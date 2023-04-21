@@ -1,0 +1,73 @@
+
+<div class="text-white ms-2">
+    <h5>{{datedetails | date:'short'}}</h5>
+</div>
+
+<div class="text-end" style="margin-top: 4px;">
+ <button (click)="deleteParent()" class="btn btn-danger">Delete account</button> 
+ <button (click)="logout()" class="btn btn-danger" style="margin-left: 5px;margin-right: 4px;">Logout</button>
+</div>
+
+
+<h1 class="text-center mt-4">Welcome {{user}}</h1>
+<app-deleteconfirm (onDelete)="Delete($event)" (oncancel)="cancel()"  [item]="acno"></app-deleteconfirm>
+
+<div [ngClass]="acno?'style':''" class="container rounded-pill text-center bg-white p-2 w-25 mt-5 ">
+    <a routerLink="/transaction" style="text-decoration: none;color: rgb(255, 145, 34);font-size: 20px;font-weight: 700;" >view transaction history</a>
+</div>
+
+<div [ngClass]="acno?'style':''" class="container row p-5" style="margin: auto;">
+   <div class="container col-lg-6 col-md-12 p-4">
+        <div class="text-center">
+            <h2 class="text-center">Deposite</h2>
+            <form [formGroup]="depositeForm" action=""  class="border  p-5 text-white " style="border-radius:20px;background-color: rgba(0, 0, 0, 0.3);">
+                
+              
+                <div class="mt-2 p-2 fw-bold fs-5">
+                   
+                    <input formControlName="acno"  type="text "  id="acid" name="acnum1" placeholder="Enter Account Number" class="form-control  ">
+                </div>
+                
+                <div class="mt-2 p-2 fw-bold fs-5">
+                    
+                    <input formControlName="psw"  type="password"  id="psw1" name="paswrd1" placeholder="Enter Password" class="form-control  ">
+                </div>
+                <div class="mt-2 p-2 fw-bold fs-5">
+            
+                    <input formControlName="amnt" type="text " id="amouid1" name="amnt1" placeholder="Amount" class="form-control  ">
+                </div>
+                <div class="mt-2 p-2 text-center fw-bold">
+                    <button type="submit" (click)="deposite()" class="btn btn-outline-light"  style="width: 100px;">deposite</button>
+                 
+            
+                </div>
+            </form>
+        </div>
+   </div>
+    <div class="container col-lg-6 col-md-12 p-4">
+        <div class="text-center">
+            <h2 class="text-center">Withdraw</h2>
+            <form [formGroup]="withdrawForm" action=""  class="border  p-5 text-white " style="border-radius:20px;background-color: rgba(0, 0, 0, 0.3);">
+             
+               
+                <div class="mt-2 p-2 fw-bold fs-5">
+                   
+                    <input formControlName="acno1" type="text " id="acid2" name="acnum2" placeholder="Enter Account Number" class="form-control  ">
+                </div>
+                <div class="mt-2 p-2 fw-bold fs-5">
+                    
+                    <input formControlName="psw1"  type="password"  id="psw2" name="paswrd2" placeholder="Enter Password" class="form-control  ">
+                </div>
+                <div class="mt-2 p-2 fw-bold fs-5">
+            
+                    <input formControlName="amnt1" type="text "  id="amouid2" name="amnt2" placeholder="Amount" class="form-control  ">
+                </div>
+                <div class="mt-2 p-2 text-center fw-bold">
+                    <button type="submit" (click)="withdraw()"  class="btn btn-outline-light"  style="width: 100px;">withdraw</button>
+                 
+            
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
